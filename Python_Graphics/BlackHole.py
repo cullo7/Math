@@ -7,10 +7,12 @@ import random
 
 def drawCircleFunction(screen, count):
   #drawing arcs already covered in a for loop 
+  #each function call iterates from count - 201 to 0
+  #each iteration calls the random function to get its height
+  #this creates many random paths and leaves a sprinkling trail of line sections
   pygame.draw.arc(screen, (255,255,255), pygame.Rect(399, 149, 402, 402), 0, 2*math.pi, 1)
   for i in range(201,count):
     x = count - i
-    print("drawCircle loop #%d" % x )
     startAng = 2*(math.pi * (x-1))/100
     endAng = 2*(math.pi * x)/100
     y = mathFunction(x)
